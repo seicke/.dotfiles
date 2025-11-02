@@ -9,3 +9,5 @@
 	email = sebastian.eicke@gmail.com
 [credential]
 	helper = osxkeychain
+[github]
+	user = seicke

@@ -35,30 +35,9 @@ done
 
 # Install Homebrew Cask stuff
 echo "Installing brew cask stuff..."
-brew install --cask adobe-acrobat-reader
-brew install --cask alfred
-brew install --cask appcleaner
-brew install --cask calibre
-brew install --cask chatgpt
-brew install --cask claude
-brew install --cask deepl
-brew install --cask docker
-brew install --cask docker-desktop
-brew install --cask font-consolas-for-powerline
-brew install --cask font-powerline-symbols
-brew install --cask font-source-code-pro
-brew install --cask google-chrome
-brew install --cask google-drive
-brew install --cask hazel
-brew install --cask jdownloader
-brew install --cask logi-options+
-brew install --cask microsoft-auto-update
-brew install --cask microsoft-teams
-brew install --cask obsidian
-brew install --cask the-unarchiver
-brew install --cask tor-browser
-brew install --cask virtualbuddy
-brew install --cask visual-studio-code
+for app in adobe-acrobat-reader alfred appcleaner calibre chatgpt claude deepl docker docker-desktop font-consolas-for-powerline font-powerline-symbols font-source-code-pro google-chrome google-drive hazel jdownloader logi-options+ microsoft-auto-update microsoft-teams obsidian the-unarchiver tor-browser virtualbuddy visual-studio-code; do
+  brew ls --cask --versions "$app" >/dev/null || brew install --cask "$app"
+done
 
 # Cleanup Homebrew
 brew cleanup --cask

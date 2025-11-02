@@ -153,4 +153,6 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "iCal" "Reminders"; do
   killall "${app}" &> /dev/null
+  while ! pgrep -x "${app}" >/dev/null; do sleep 0.1; done
+echo "✅ ${app} restarted and settings applied."
 done

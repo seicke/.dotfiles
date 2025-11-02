@@ -13,7 +13,7 @@ dockutil --no-restart --add "/System/Applications/Safari.app"
 dockutil --no-restart --add "/Applications/Visual Studio Code.app"
 
 # Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide -bool false
 
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false

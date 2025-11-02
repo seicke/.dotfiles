@@ -1,7 +1,4 @@
 #!/bin/zsh
-# Get the directory of the current script
-source defaults.sh
-
 echo " Updating macOS software..."
 sudo softwareupdate -i -a
 
@@ -29,7 +26,7 @@ brew update
 
 # Install Homebrew stuff
 echo "📦 Installing Homebrew packages..."
-for pkg in curl git git-extras nano node topgrade wget zsh zsh-autosuggestions zsh-syntax-highlighting; do
+for pkg in curl dockutil git git-extras nano node topgrade wget zsh zsh-autosuggestions zsh-syntax-highlighting; do
     brew list --formula | grep -q "^${pkg}$" || brew install "$pkg"
 done
 
@@ -45,5 +42,7 @@ brew cleanup
 
 # Install Oh My zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+source defaults.sh
 
 source dock.sh

@@ -1,6 +1,8 @@
 #!/bin/zsh
+# Get the directory of the current script
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-source "$PWD/scripts/defaults.sh"
+source "$DIR/scripts/defaults.sh"
 
 echo " Updating macOS software..."
 sudo softwareupdate -i -a

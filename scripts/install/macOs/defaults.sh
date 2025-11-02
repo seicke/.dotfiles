@@ -2,7 +2,8 @@
 
 # macOS | Computer name
 # Ask the user for the computer name
-read -p "Please enter the computer name: " COMPUTER_NAME
+echo -n "Please enter the computer name: "
+read COMPUTER_NAME
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "$COMPUTER_NAME"
 sudo scutil --set HostName "$COMPUTER_NAME"

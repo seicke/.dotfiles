@@ -26,5 +26,5 @@ else
 fi
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  source ./install/macOS/install.sh
+  source ./scripts/install/macOS/install.sh
 fi

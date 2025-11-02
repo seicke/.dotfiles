@@ -27,6 +27,6 @@ else
   eval "$CMD"
 fi
 
-if [[ "$(uname)" == "Darwin" ]]; then
-  source ./scripts/install/macOS/install.sh
-fi
+# if [[ "$(uname)" == "Darwin" ]]; then
+  # source ./scripts/install/macOS/install.sh
+# fi

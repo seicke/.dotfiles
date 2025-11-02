@@ -29,7 +29,7 @@ brew update
 
 # Install Homebrew stuff
 echo "Installing brew stuff..."
-for pkg in curl git git-extras nano node topgrade wget zsh zsh-autosuggestions; zsh-syntax-highlighting do
+for pkg in curl git git-extras nano node topgrade wget zsh zsh-autosuggestions zsh-syntax-highlighting; do
   brew list --formula | grep -q "^${pkg}$" || brew install "$pkg"
 done
 

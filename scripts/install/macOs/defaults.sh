@@ -14,6 +14,7 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 # Set language and text formats
 LANGUAGES=(en de)
 LOCALE="de_DE@currency=EUR"
+TIMEZONE="Europe/Berlin"
 # Set language and text formats
 defaults write NSGlobalDomain AppleLanguages -array ${LANGUAGES[@]}
 defaults write NSGlobalDomain AppleLocale -string "$LOCALE"
@@ -22,6 +23,7 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # Set the time zone
 sudo defaults write /Library/Preferences/com.apple.timezone.auto Active -bool YES
 sudo systemsetup -setusingnetworktime on
+sudo systemsetup -settimezone ${TIMEZONE}
 
 # macOS | Sound
 # Disable audio feedback when volume is changed
@@ -153,6 +155,4 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "iCal" "Reminders"; do
   killall "${app}" &> /dev/null
-  while ! pgrep -x "${app}" >/dev/null; do sleep 0.1; done
-echo "✅ ${app} restarted and settings applied."
 done

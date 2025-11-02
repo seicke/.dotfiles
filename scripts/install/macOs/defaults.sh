@@ -22,8 +22,15 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "$MEASUREMENT_UNITS"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 # Set the time zone
 sudo defaults write /Library/Preferences/com.apple.timezone.auto Active -bool YES
+
+if systemsetup -listtimezones | grep -q "^$TIMEZONE$"; then
+    # Set timezone silently, suppress warnings
+    sudo systemsetup -settimezone "$TIMEZONE" >/dev/null 2>&1 || true
+    echo "✅ Timezone set to $TIMEZONE"
+else
+    echo "⚠️ Timezone $TIMEZONE not found"
+fi
 sudo systemsetup -setusingnetworktime on
-sudo systemsetup -settimezone ${TIMEZONE}
 
 # macOS | Sound
 # Disable audio feedback when volume is changed

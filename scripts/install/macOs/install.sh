@@ -8,29 +8,27 @@ sudo softwareupdate -i -a
 echo "Installing Xcode Command Line Tools..."
 xcode-select --install
 
-if test ! $(which brew); then
-    echo "Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Check if Homebrew is installed
+if ! command -v brew >/dev/null 2>&1; then
+    echo "🍺 Installing Homebrew..."
 
-    echo "Installing Homebrew Cask..."
-brew install caskroom/cask/brew-cask
+    # Run the official Homebrew installer
+    /bin/bash -c "$(curl -fsSL "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh?nocache=$(date +%s)")"
+
+    echo "✅ Homebrew installation complete."
+
+    echo "🍺 Installing Homebrew Cask..."
+    brew install caskroom/cask/brew-cask
 fi
 
 echo "Updating Homebrew..."
 brew update
 
-# Install git
-if test ! $(which git); then
-    echo "Installing Git..."
-    brew install git
-fi
-
-echo "Installing brew git utilities..."
-brew install git-extras
-
 # Install Homebrew stuff
-echo "Installing other brew stuff..."
+echo "Installing brew stuff..."
 brew install curl
+brew install git
+brew install git-extras
 brew install nano
 brew install node
 brew install topgrade

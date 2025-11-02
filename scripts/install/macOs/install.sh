@@ -68,7 +68,7 @@ brew install --cask virtualbuddy
 brew install --cask visual-studio-code
 
 # Cleanup Homebrew
-brew cask cleanup
+brew cleanup --cask
 brew cleanup
 
 # Install Oh My zsh

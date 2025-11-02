@@ -76,6 +76,8 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/$USER"
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
 defaults write com.apple.finder FXInfoPanesExpanded -dict General -bool true OpenWith -bool true Privileges -bool true

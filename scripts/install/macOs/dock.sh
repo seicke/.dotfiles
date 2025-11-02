@@ -1,16 +1,16 @@
 #!/bin/zsh
 
 dockutil --no-restart --remove all
-dockutil --no-restart --add "/System/Applications/Utilities/Terminal.app"
-dockutil --no-restart --add "/System/Applications/Music.app"
-dockutil --no-restart --add "/System/Applications/Messages.app"
-dockutil --no-restart --add "/System/Applications/Notes.app"
-dockutil --no-restart --add "/Applications/Obsidian.app"
-dockutil --no-restart --add "/System/Applications/Calendar.app"
-dockutil --no-restart --add "/System/Applications/Reminders.app"
-dockutil --no-restart --add "/System/Applications/Mail.app"
-dockutil --no-restart --add "/Applications/Safari.app"
-dockutil --no-restart --add "/Applications/Visual Studio Code.app"
+dockutil --no-restart --add "/System/Applications/Utilities/Terminal.app" >/dev/null
+dockutil --no-restart --add "/System/Applications/Music.app" >/dev/null
+dockutil --no-restart --add "/System/Applications/Messages.app" >/dev/null
+dockutil --no-restart --add "/System/Applications/Notes.app" >/dev/null
+dockutil --no-restart --add "/Applications/Obsidian.app" >/dev/null
+dockutil --no-restart --add "/System/Applications/Calendar.app" >/dev/null
+dockutil --no-restart --add "/System/Applications/Reminders.app" >/dev/null
+dockutil --no-restart --add "/System/Applications/Mail.app" >/dev/null
+dockutil --no-restart --add "/Applications/Safari.app" >/dev/null
+dockutil --no-restart --add "/Applications/Visual Studio Code.app" >/dev/null
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool false

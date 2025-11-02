@@ -27,6 +27,7 @@ defaults write com.apple.dock no-bouncing -bool true
 # Don't show recently used applications in the Dock
 defaults write com.Apple.Dock show-recents -bool false
 
+echo "⏳ Waiting for Dock to restart."
 killall Dock
 
 while ! pgrep -x "Dock" >/dev/null; do sleep 0.1; done

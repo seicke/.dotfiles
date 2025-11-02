@@ -24,3 +24,7 @@ else
   mkdir -p "$TARGET"
   eval "$CMD"
 fi
+
+if [[ "$(uname)" == "Darwin" ]]; then
+  source ./install/macOS/install.sh
+fi

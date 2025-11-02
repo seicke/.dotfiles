@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # macOS | Computer name
 # Ask the user for the computer name
 read -p "Please enter the computer name: " COMPUTER_NAME

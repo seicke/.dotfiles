@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/bin/sh
+
+source ./scripts/defaults.sh
+
 echo "Updating macOS software..."
 sudo softwareupdate -i -a
 
@@ -69,3 +72,5 @@ brew cleanup
 
 # Install Oh My zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+source ./scripts/dock.sh

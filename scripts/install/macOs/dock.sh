@@ -9,7 +9,7 @@ dockutil --no-restart --add "/Applications/Obsidian.app"
 dockutil --no-restart --add "/System/Applications/Calendar.app"
 dockutil --no-restart --add "/System/Applications/Reminders.app"
 dockutil --no-restart --add "/System/Applications/Mail.app"
-dockutil --no-restart --add "/System/Applications/Safari.app"
+dockutil --no-restart --add "/Applications/Safari.app"
 dockutil --no-restart --add "/Applications/Visual Studio Code.app"
 
 # Automatically hide and show the Dock

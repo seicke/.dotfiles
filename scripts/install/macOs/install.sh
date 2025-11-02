@@ -32,7 +32,7 @@ done
 
 # Install Homebrew Cask stuff
 echo "🖥️ Installing Homebrew cask apps..."
-for app in adobe-acrobat-reader alfred appcleaner calibre chatgpt claude deepl docker docker-desktop font-consolas-for-powerline font-powerline-symbols font-source-code-pro google-chrome google-drive hazel jdownloader logi-options+ microsoft-auto-update microsoft-teams obsidian the-unarchiver tor-browser virtualbuddy visual-studio-code; do
+for app in adobe-acrobat-reader alfred appcleaner calibre chatgpt claude deepl docker docker-desktop font-consolas-for-powerline font-powerline-symbols font-source-code-pro-for-powerline font-source-code-pro google-chrome google-drive hazel jdownloader logi-options+ microsoft-auto-update microsoft-teams obsidian the-unarchiver tor-browser virtualbuddy visual-studio-code; do
     brew ls --cask --versions "$app" >/dev/null || brew install --cask "$app"
 done
 

@@ -1,0 +1,9 @@
+[core]
+    excludesfile = /Users/seicke/.gitignore
+    editor = nano
+[init]
+    # New repos start with main, not master
+    defaultBranch = main
+[user]
+    name = seicke
+    email = sebastian.eicke@gmail.com

@@ -43,7 +43,7 @@ brew cleanup
 # Install Oh My zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-source defaults.sh
-source dock.sh
+source ~/.dotfiles/scripts/install/macOS/defaults.sh
+source ~/.dotfiles/scripts/install/macOS/dock.sh
 
-source ../../update/symlinking.sh
+source ~/.dotfiles/scripts/update/symlinking.sh

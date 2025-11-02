@@ -11,22 +11,26 @@ is_executable() {
   type "$1" > /dev/null 2>&1
 }
 
-if is_executable "git"; then
-  CMD="git clone $SOURCE $TARGET"
-elif is_executable "curl"; then
-  CMD="curl -#L $TARBALL | $TAR_CMD"
-elif is_executable "wget"; then
-  CMD="wget --no-check-certificate -O - $TARBALL | $TAR_CMD"
-fi
-
-if [ -z "$CMD" ]; then
-  echo "❌ No git, curl or wget available. Aborting."
+if [ -d "$FOLDER_PATH" ]; then
+    git pull
 else
-  echo "📥 Downloading .dotfiles..."
-  mkdir -p "$TARGET"
-  eval "$CMD"
+  if is_executable "git"; then
+    CMD="git clone $SOURCE $TARGET"
+  elif is_executable "curl"; then
+    CMD="curl -#L $TARBALL | $TAR_CMD"
+  elif is_executable "wget"; then
+    CMD="wget --no-check-certificate -O - $TARBALL | $TAR_CMD"
+  fi
+
+  if [ -z "$CMD" ]; then
+    echo "❌ No git, curl or wget available. Aborting."
+  else
+    echo "📥 Downloading .dotfiles..."
+    mkdir -p "$TARGET"
+    eval "$CMD"
+  fi
 fi
 
-# if [[ "$(uname)" == "Darwin" ]]; then
-  # source ./scripts/install/macOS/install.sh
-# fi
+if [[ "$(uname)" == "Darwin" ]]; then
+  source ~/.dotfiles/scripts/install/macOS/install.sh
+fi

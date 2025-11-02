@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "🚀 Starting .dotfiles setup..."
+
 SOURCE="https://github.com/seicke/.dotfiles"
 TARBALL="$SOURCE/tarball/main"
 TARGET="$HOME/.dotfiles"
@@ -18,9 +20,9 @@ elif is_executable "wget"; then
 fi
 
 if [ -z "$CMD" ]; then
-  echo "No git, curl or wget available. Aborting."
+  echo "❌ No git, curl or wget available. Aborting."
 else
-  echo "Installing dotfiles..."
+  echo "📥 Downloading .dotfiles..."
   mkdir -p "$TARGET"
   eval "$CMD"
 fi

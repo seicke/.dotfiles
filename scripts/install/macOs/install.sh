@@ -44,5 +44,6 @@ brew cleanup
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 source defaults.sh
-
 source dock.sh
+
+source ../../update/symlinking.sh

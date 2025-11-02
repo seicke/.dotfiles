@@ -111,6 +111,12 @@ docker() {
     fi
 }
 
+source "$HOME/.dotfiles/system/.alias"
+source "$HOME/.dotfiles/system/.alias.macos"
+source "$HOME/.dotfiles/system/.env"
+
+export PATH="$HOME/.dotfiles/bin:$PATH"
+
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
 export LDFLAGS="-L/opt/homebrew/opt/curl/lib"
@@ -120,15 +126,15 @@ export PATH="/opt/homebrew/opt/mongodb-community@5.0/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 
-export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+# export JAVA_HOME=$(/usr/libexec/java_home)
 
-export PATH="/Users/seicke/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 export HOMEBREW_AUTO_UPDATE_SECS=86400
 
 # pnpm
-export PNPM_HOME="/Users/seicke/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

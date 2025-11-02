@@ -2,6 +2,7 @@
 
 ln -sf $HOME'/.dotfiles/.gitignore' $HOME'/.gitignore'
 ln -sf $HOME'/.dotfiles/.config/.gitconfig' $HOME'/.gitconfig'
+ln -sf $HOME'/.dotfiles/system/.bash_profile' $HOME'/.bash_profile'
 ln -sf $HOME'/.dotfiles/system/.zshrc' $HOME'/.zshrc'
 ln -sf $HOME'/.dotfiles/system/.zprofile' $HOME'/.zprofile'
 

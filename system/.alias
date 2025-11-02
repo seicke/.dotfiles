@@ -1,0 +1,15 @@
+# Shortcuts
+alias _="sudo"
+
+# Default options
+# alias json="json -c"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Miscellaneous
+alias quit="exit"
+alias week="date +%V"
+alias speedtest="wget -O /dev/null http://speed.transip.nl/100mb.bin"

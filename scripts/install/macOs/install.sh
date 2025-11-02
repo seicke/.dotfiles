@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 source ./scripts/defaults.sh
 
@@ -16,6 +16,9 @@ if ! command -v brew >/dev/null 2>&1; then
     /bin/bash -c "$(curl -fsSL "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh?nocache=$(date +%s)")"
 
     echo "✅ Homebrew installation complete."
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    source ~/.zprofile
 
     echo "🍺 Installing Homebrew Cask..."
     brew install caskroom/cask/brew-cask

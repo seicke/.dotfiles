@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # macOS | Computer name
 # Ask the user for the computer name

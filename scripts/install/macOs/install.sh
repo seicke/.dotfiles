@@ -2,10 +2,10 @@
 
 source ./scripts/defaults.sh
 
-echo "Updating macOS software..."
+echo " Updating macOS software..."
 sudo softwareupdate -i -a
 
-echo "Installing Xcode Command Line Tools..."
+echo " Installing Xcode Command Line Tools..."
 xcode-select --install
 
 # Check if Homebrew is installed
@@ -24,23 +24,23 @@ if ! command -v brew >/dev/null 2>&1; then
     brew install caskroom/cask/brew-cask
 fi
 
-echo "Updating Homebrew..."
+echo "🔄 Updating Homebrew..."
 brew update
 
 # Install Homebrew stuff
-echo "Installing brew stuff..."
+echo "📦 Installing Homebrew packages..."
 for pkg in curl git git-extras nano node topgrade wget zsh zsh-autosuggestions zsh-syntax-highlighting; do
-  brew list --formula | grep -q "^${pkg}$" || brew install "$pkg"
+    brew list --formula | grep -q "^${pkg}$" || brew install "$pkg"
 done
 
 # Install Homebrew Cask stuff
-echo "Installing brew cask stuff..."
+echo "🖥️ Installing Homebrew cask apps..."
 for app in adobe-acrobat-reader alfred appcleaner calibre chatgpt claude deepl docker docker-desktop font-consolas-for-powerline font-powerline-symbols font-source-code-pro google-chrome google-drive hazel jdownloader logi-options+ microsoft-auto-update microsoft-teams obsidian the-unarchiver tor-browser virtualbuddy visual-studio-code; do
-  brew ls --cask --versions "$app" >/dev/null || brew install --cask "$app"
+    brew ls --cask --versions "$app" >/dev/null || brew install --cask "$app"
 done
 
 # Cleanup Homebrew
-brew cleanup --cask
+echo "🧹 Cleaning up Homebrew..."
 brew cleanup
 
 # Install Oh My zsh

@@ -1,8 +1,6 @@
 #!/bin/zsh
 # Get the directory of the current script
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-
-source "$DIR/defaults.sh"
+source defaults.sh
 
 echo " Updating macOS software..."
 sudo softwareupdate -i -a
@@ -48,4 +46,4 @@ brew cleanup
 # Install Oh My zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-source "$PWD/dock.sh"
+source dock.sh
